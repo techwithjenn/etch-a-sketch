@@ -1,102 +1,51 @@
 var drawingCanvas = document.getElementById('canvas');
 
-var dimensions = 16;
+function makeRows(rows, cols) {
+    drawingCanvas.style.setProperty('--grid-rows', rows);
+    drawingCanvas.style.setProperty('--grid-cols', cols);
+    for (c =0; c < (rows * cols); c++) {
+        let cell = document.createElement('div');
+        
+        cell.addEventListener('mouseover', function() {
+            changeColor(cell);
+        })
+        drawingCanvas.appendChild(cell).className = 'grid-item';
+    };
+};
 
-function changeColor (target) {
-    target.style.backgroundColor = 'black'
-}
-
-
-
-// container.addEventListener("mouseover", function (e) {
-//     target = e.target;
-
-//     if (target.matches("div.cell")) {
-//         changeColor(target);
-//     }
-// });
-
-
-function drawBoard() {
-    for (i=0; i < dimensions; i++) {
-        for (j = 0; j < dimensions; j++) {
-            var canvasUnit = document.createElement('div');
-            canvasUnit.classList.add('unit');
-            drawingCanvas.append(canvasUnit);
-            
-
-        }
-    }       
-}
-
-drawBoard();
-
-
-drawingCanvas.addEventListener('mouseover', function(e) {
-    target = e.target;
-    if (target.matches('div.unit')) {
-        changeColor(target);
+function changeColor (cellunit) {
+    const blackColor = document.getElementById('black');
+    const rainbowColor = document.getElementById('rainbow');
+    const grayscaleColor = document.getElementById('grayscale');
+    if (blackColor.checked) {
+        cellunit.style.backgroundColor = 'black';
     }
-})
+    else if (rainbowColor.checked) {
+        cellunit.className = 'rainbow';
+    }
+    else if (grayscaleColor.checked) {
+        cellunit.style.backgroundColor = 'gray';
+    }
+}
 
-
-// for (i=0; i < dimensions; i++) {
-//     for (j = 0; j < dimensions; j++) {
-//         var canvasUnit = drawingCanvas.createElement('div');
-//         canvasUnit.classList.add('unit');
-//         drawingCanvas.append(canvasUnit);
-//         canvasUnit.addEventListener('mouseover', Etch());
-            
-        // var gridUnits = drawingCanvas.querySelectorAll('unit');
-        // gridUnits.forEach(gridUnit => gridUnit.addEventListener('mouseover', () => Etch(gridUnit)))
-
-//     }
-// }        
+makeRows(16,16);
 
 
 
 
-// Adjust size of blocks for other grid sizes
-// Fix mouseover issue
-
-
-// document.querySelectorAll('.unit').addEventListener('mouseover', event => {
-//     document.querySelectorAll('.unit').classList.add('drawn');})
-
-
-  
-
-
-
-
-// --------------------
 
 function handleChange1() {
     drawingCanvas.innerHTML = '';
-    dimensions = 100;    
-    drawBoard(dimensions);
-    console.log('it changed 100')
-
-
-    console.log(drawingCanvas.getElementsByTagName('div').length);
-
+    makeRows(60,60)  
 }
 
 function handleChange2() {
     drawingCanvas.innerHTML = '';
-
-    dimensions = 50;
-
-    drawBoard(dimensions);
-    console.log('it changed 50')
-    console.log(drawingCanvas.getElementsByTagName('div').length);
-
+    makeRows(35,35)
 }
 
 
 function handleChange3() {
     drawingCanvas.innerHTML = '';
-    dimensions = 16;
-    drawBoard(dimensions);
-    console.log('it changed 16');
+    makeRows(16,16)
 }

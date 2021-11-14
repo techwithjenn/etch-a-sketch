@@ -12,20 +12,33 @@
         </div>
     </div>
     
+    <div id='settings'>
     <div id='unit-size'>
         <h3>Choose the size of each unit!</h3>
         <input type="radio" id="small-units" class="unit-selection"
-         name="unitsize" value="100" onclick="handleChange1();">
+         name="unitsize" value="60" onclick="handleChange1();">
         <label for="small-units">Small</label>
     
         <input type="radio" id="medium-units" class="unit-selection"
-         name="unitsize" value="50" onclick="handleChange2();">
+         name="unitsize" value="35" onclick="handleChange2();">
         <label for="medium-units">Medium</label>
     
         <input type="radio" id="large-units" class="unit-selection"
          name="unitsize" value="16" checked ="checked" onclick="handleChange3();">
         <label for="large-units">Large</label>
       </div>
+
+
+    <div id='pen-color'>
+        <h3>Choose the color of the pen!</h3>
+        <input type = 'radio' id = 'black' checked = 'checked' name = 'color' onclick="changeColor();"></input>
+        <label for="black">Black</label>
+        <input type = 'radio' id = 'rainbow' name = 'color' onclick="changeColor();"></input>
+        <label for="rainbow">Rainbow</label>
+        <input type = 'radio' id = 'grayscale' name = 'color' onclick="changeColor();"></input>
+        <label for="grayscale">grayscale</label>
+    </div>
+    </div>
     <script src='script.js'></script>
 
 </body>
