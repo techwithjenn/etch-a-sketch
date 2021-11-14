@@ -31,12 +31,16 @@
 
     <div id='pen-color'>
         <h3>Choose the color of the pen!</h3>
-        <input type = 'radio' id = 'black' checked = 'checked' name = 'color' onclick="changeColor();"></input>
+        <input type = 'radio' id = 'black' checked = 'checked' name = 'color'"></input>
         <label for="black">Black</label>
-        <input type = 'radio' id = 'rainbow' name = 'color' onclick="changeColor();"></input>
+        <input type = 'radio' id = 'rainbow' name = 'color'></input>
         <label for="rainbow">Rainbow</label>
-        <input type = 'radio' id = 'grayscale' name = 'color' onclick="changeColor();"></input>
+        <input type = 'radio' id = 'grayscale' name = 'color'"></input>
         <label for="grayscale">grayscale</label>
+    </div>
+
+    <div id='reset'>
+        <button id = 'reset-board' onclick="resetBoard();">Reset Board</button>
     </div>
     </div>
     <script src='script.js'></script>
