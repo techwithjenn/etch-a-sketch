@@ -6,13 +6,27 @@
     <title>Etch a Sketch</title>
 </head>
 <body>
+
     <div id='container'>
         <div id='canvas'>
-
-
         </div>
     </div>
     
+    <div id='unit-size'>
+        <h3>Choose the size of each unit!</h3>
+        <input type="radio" id="small-units" class="unit-selection"
+         name="unitsize" value="100" onclick="handleChange1();">
+        <label for="small-units">Small</label>
+    
+        <input type="radio" id="medium-units" class="unit-selection"
+         name="unitsize" value="50" onclick="handleChange2();">
+        <label for="medium-units">Medium</label>
+    
+        <input type="radio" id="large-units" class="unit-selection"
+         name="unitsize" value="16" checked ="checked" onclick="handleChange3();">
+        <label for="large-units">Large</label>
+      </div>
     <script src='script.js'></script>
+
 </body>
 </html>
