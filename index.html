@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <link rel='stylesheet' href='style.css'>
     <title>Etch a Sketch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div id='container'>
+        <div id='title'>Etch A Sketch</div>
         <div id='canvas'>
         </div>
-    </div>
+    
     
     <div id='settings'>
+        
+    <span class='dot' id='dot1'></span>
     <div id='unit-size'>
-        <h3>Choose the size of each unit!</h3>
+        <h3>Grid Size:</h3>
         <input type="radio" id="small-units" class="unit-selection"
          name="unitsize" value="60" onclick="handleChange1();">
         <label for="small-units">Small</label>
@@ -26,23 +32,29 @@
         <input type="radio" id="large-units" class="unit-selection"
          name="unitsize" value="16" checked ="checked" onclick="handleChange3();">
         <label for="large-units">Large</label>
-      </div>
+    </div>
 
 
     <div id='pen-color'>
-        <h3>Choose the color of the pen!</h3>
+        <h3>Pen Color:</h3>
         <input type = 'radio' id = 'black' checked = 'checked' name = 'color'"></input>
         <label for="black">Black</label>
         <input type = 'radio' id = 'rainbow' name = 'color'></input>
         <label for="rainbow">Rainbow</label>
         <input type = 'radio' id = 'grayscale' name = 'color'"></input>
-        <label for="grayscale">grayscale</label>
+        <label for="grayscale">Grayscale</label>
     </div>
 
     <div id='reset'>
-        <button id = 'reset-board' onclick="resetBoard();">Reset Board</button>
+        <button id = 'reset-board' onclick="resetBoard();">Clear</button>
     </div>
+    
+    <span class='dot' id='dot2'></span>
     </div>
+
+    
+
+</div>
     <script src='script.js'></script>
 
 </body>
